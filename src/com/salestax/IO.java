@@ -1,8 +1,17 @@
 package com.salestax;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IO {
+
+    ArrayList<String> notToadd;
+    ArrayList<String> toAdd;
+
+    public IO(ArrayList<String> notToadd,ArrayList<String> toAdd) {
+        this.notToadd = notToadd;
+        this.toAdd = toAdd;
+    }
 
     public void acceptInput() {
         System.out.print("Enter the Number of Items:");
@@ -11,7 +20,7 @@ public class IO {
     }
 
 
-    public void acceptItems() {
+    public void acceptItems(ArrayList<String> notToadd,ArrayList<String> toAdd) {
         System.out.print("\nEnter the Item details:\n");
         Scanner scanner = new Scanner(System.in);
         String[] items = new String[3];
@@ -19,12 +28,12 @@ public class IO {
             System.out.println("Enter the item");
             items[i] = scanner.nextLine();
         }
-
+        for (int i = 0; i < items.length; i++) {
+            if(items[i].contains("imported")) {
+                notToadd.add(items[i]);
+            }
+            else
+                toAdd.add(items[i]);
+        }
     }
-
-
-  /*
-    public void cointainsImported() {
-        str1.toLowerCase().contains(str2.toLowerCase())
-    }*/
 }

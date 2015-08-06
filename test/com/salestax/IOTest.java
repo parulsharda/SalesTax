@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +23,10 @@ public class IOTest {
 
     @Test
     public void checkTheInputMsgToAcceptTheNumberOfItems() {
-        IO io = new IO();
+        ArrayList<String> notToAdd = new ArrayList<String>();
+        ArrayList<String> toAdd = new ArrayList<String>();
+
+        IO io = new IO(notToAdd,toAdd);
         io.acceptInput();
         assertEquals("Enter the Number of Items:", outContent.toString());
     }
@@ -30,7 +34,10 @@ public class IOTest {
 
     @Test
     public void checkTheInputMsgToAcceptTheItems() {
-        IO io = new IO();
+        ArrayList<String> notToAdd = new ArrayList<String>();
+        ArrayList<String> toAdd = new ArrayList<String>();
+
+        IO io = new IO(notToAdd,toAdd);
         io.acceptInput();
         assertEquals("\nEnter the Item Details:\n", outContent.toString());
     }

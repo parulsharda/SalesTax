@@ -1,11 +1,15 @@
 package com.salestax;
 
+import java.util.ArrayList;
+
 public class EntryPoint {
 
     public static void main(String args[])
     {
-        IO io = new IO();
+        ArrayList<String> notToadd = new ArrayList<String>();
+        ArrayList<String> toAdd = new ArrayList<String>();
+        IO io = new IO(notToadd,toAdd);
         io.acceptInput();
-        io.acceptItems();
+        io.acceptItems(notToadd,toAdd);
     }
 }
