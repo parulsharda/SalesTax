@@ -28,6 +28,13 @@ public class IOTest {
     }
 
 
+    @Test
+    public void checkTheInputMsgToAcceptTheItems() {
+        IO io = new IO();
+        io.acceptInput();
+        assertEquals("\nEnter the Item Details:\n", outContent.toString());
+    }
+
 
     @After
     public void cleanUpStreams() {
