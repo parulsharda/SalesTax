@@ -3,10 +3,13 @@ package com.salestax;
 public class Imported {
     private double salesPrice = 0.05;
 
+    public Imported(double salesPrice) {
+        this.salesPrice = salesPrice;
+    }
+
     public double computeImportedTaxOnBasePrice(double amount)
     {
-        double tax = (salesPrice * amount) + amount;
-        return tax;
+        return (salesPrice * amount) + amount;
     }
 }
 
