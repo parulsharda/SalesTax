@@ -8,7 +8,8 @@ public class IO {
     ArrayList<String> notToadd;
     ArrayList<String> toAdd;
 
-    public IO(ArrayList<String> notToadd,ArrayList<String> toAdd) {
+
+    public IO(ArrayList<String> notToadd, ArrayList<String> toAdd) {
         this.notToadd = notToadd;
         this.toAdd = toAdd;
     }
@@ -20,20 +21,23 @@ public class IO {
     }
 
 
-    public void acceptItems(ArrayList<String> notToadd,ArrayList<String> toAdd) {
+    public void acceptItems(ArrayList<String> notToadd, ArrayList<String> toAdd) {
         System.out.print("\nEnter the Item details:\n");
         Scanner scanner = new Scanner(System.in);
         String[] items = new String[3];
+
         for (int i = 0; i < items.length; i++) {
             System.out.println("Enter the item");
             items[i] = scanner.nextLine();
         }
+
         for (int i = 0; i < items.length; i++) {
-            if(items[i].contains("imported")) {
+            if (items[i].contains("imported")) {
                 notToadd.add(items[i]);
-            }
-            else
+            } else {
                 toAdd.add(items[i]);
+            }
         }
     }
 }
+
